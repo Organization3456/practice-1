@@ -1,7 +1,6 @@
 FROM maven:3.9.3-eclipse-temurin-8 as build
-RUN mkdir /workplace
 WORKDIR /workplace
-ADD . .
+COPY . .
 RUN mvn clean package
 # run stage
 FROM tomcat:jre17-temurin-jammy
