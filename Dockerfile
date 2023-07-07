@@ -1,7 +1,7 @@
 FROM docker.io/library/maven:3.9.3-eclipse-temurin-8 as build
-USER root
 RUN mkdir /workplace
-ADD . /workplace
+WORKDIR /workplace
+ADD . .
 RUN mvn clean package
 # run stage
 FROM docker.io/library/tomcat:jre17-temurin-jammy
