@@ -5,4 +5,4 @@ RUN mvn clean package
 # run stage
 FROM tomcat:jre17-temurin-jammy
 EXPOSE 8080
-COPY --from=build /workplace/target/maven-web-application*.jar /usr/local/tomcat/webapps/maven-web-application.war
+COPY --from=build /workplace/target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
